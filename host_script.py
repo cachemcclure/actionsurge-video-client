@@ -42,7 +42,7 @@ cam_no = int(input('Number of camera feeds: '))
 sockets = {}
 for xx in range(cam_no):
     sockets['cam_'+str(xx+1)] = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    host_ip = input('Camera 1 Remote IP (shown on their screen): ')
+    host_ip = input('Camera {} Remote IP (shown on their screen): '.format(xx+1))
     port = 10060 + xx
     sockets['cam_'+str(xx+1)].connect((host_ip,port))
 
